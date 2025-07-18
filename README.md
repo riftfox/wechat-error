@@ -1,25 +1,3 @@
-<?php
-use Riftfox\Wechat\Error\ErrorFactoryInterface;
-
-class YourProvider 
-{
-    private ErrorFactoryInterface $errorFactory;
-    
-    public function __construct(ErrorFactoryInterface $errorFactory) 
-    {
-        $this->errorFactory = $errorFactory;
-    }
-    
-    public function someMethod()
-    {
-        $response = ['errcode' => 40001, 'errmsg' => 'invalid credential'];
-        
-        if (isset($response['errcode']) && $response['errcode'] !== 0) {
-            throw $this->errorFactory->createException($response['errmsg'], $response['errcode']);
-        }
-    }
-}
-````markdown
 # wechat-error
 
 微信错误处理模块，提供统一的错误信息数据结构。
@@ -114,6 +92,11 @@ interface ErrorFactoryInterface
 }
 ```
 
+## 相关模块
+
+- [wechat-js-code-to-session](https://github.com/riftfox/wechat-js-code-to-session)
+- [wechat-check-session](https://github.com/riftfox/wechat-check-session)
+- [wechat-session](https://github.com/riftfox/wechat-session)
 
 ## 版本要求
 
@@ -123,4 +106,3 @@ interface ErrorFactoryInterface
 ## License
 
 MIT
-````
