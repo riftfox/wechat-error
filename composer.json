@@ -1,0 +1,14 @@
+{
+  "name": "riftfox/wechat-error",
+  "description": "微信公众平台响应错误类",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Riftfox",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+  }
+}
